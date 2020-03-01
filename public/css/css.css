@@ -1,0 +1,43 @@
+
+/*#blogPost {
+
+	border: 2px solid black;
+	
+}*/
+
+body {
+	background-color: #00CED1;
+}
+
+#text1 {
+	width: 1500px;
+	height: 30px;
+}
+
+#text2 {
+	width: 1500px;
+	height: 300px;
+}
+
+h1 {
+	padding:0 5px;
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+
+p {
+	border-bottom: 2px solid black;
+}
+
+h1, h3, h4{
+	display: inline;
+}
+
+.postStuff {
+  display: none;
+}
+
+/* #postbtns{
+    display: inline;
+} */

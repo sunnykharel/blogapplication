@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<!-- <div id="like_button_container"></div>
+ -->
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel = "stylesheet" href = "css.css" >
+
+<body >
+
+<img src= "logo.png"> 
+
+<br>
+<br>
+
+<!-- these link buttons are just to move the last button -->
+
+<h3 id="fun"> Type your post title here: </h3>
+
+<input type="text" id="text1">
+
+<h3> Type your post body here: </h3>
+
+<textarea id="text2">  </textarea> 
+
+<br>
+<br>
+
+
+<button type="button" class="btn btn-success" onclick="postIt()">POST</button>
+
+<script>
+	function createCORSRequest(method, url) {
+	  		var xhr = new XMLHttpRequest();
+		  if ("withCredentials" in xhr) {
+
+		    // Check if the XMLHttpRequest object has a "withCredentials" property.
+		    // "withCredentials" only exists on XMLHTTPRequest2 objects.
+		    xhr.open(method, url, true);
+
+		  } else if (typeof XDomainRequest != "undefined") {
+
+		    // Otherwise, check if XDomainRequest.
+		    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+		    xhr = new XDomainRequest();
+		    xhr.open(method, url);
+
+		  } else {
+
+		    // Otherwise, CORS is not supported by the browser.
+		    xhr = null;
+
+		  }
+		  return xhr;
+	}
+
+
+	function postIt(){
+
+
+
+
+		//first get the info from the text fields
+		var title = document.getElementById("text1").value;
+		var text = document.getElementById("text2").value;
+
+		
+
+	url = "http://72.182.124.170:5000/blogposts/add"
+
+	// var x = document.getElementById("fun");
+	//  x.style.display = "none";
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', url, true);
+	var data = new FormData();
+	data.append('user', 'person');
+	data.append('date', 'today');
+	data.append('post', 'a post');
+	xhr.send(data);
+
+	// var xhr = new XMLHttpRequest();
+	// var url = "http://72.182.124.170:5000/blogposts/add";
+	// xhr.open("POST", url, true);
+	// xhr.setRequestHeader("Content-Type", "application/json");
+	// xhr.onreadystatechange = function () {
+ //    if (xhr.readyState === 4 && xhr.status === 200) {
+ //        var json = JSON.parse(xhr.responseText);
+ //        console.log(json.email + ", " + json.password);
+ //    }
+	// };
+	// var data = JSON.stringify({"email": "hey@mail.com", "password": "101010"});
+	// xhr.send(data);
+}
+</script>
+
+
+<button type="button" class="btn btn-danger" onclick="location.href = 'landing page.html'">CANCEL</button>
+
+<!-- Load React.
+ -->  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+
+<!--   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+ -->
+  <!-- Load our React component. -->
+<!--   <script src="like_button.js"></script> -->
+
+</body>
+
+</html>

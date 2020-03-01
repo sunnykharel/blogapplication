@@ -1,0 +1,4 @@
+cron:
+- description: "daily summary job"
+  url: /subscriptions/
+  schedule: every day 23:00

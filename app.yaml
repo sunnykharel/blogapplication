@@ -1,0 +1,12 @@
+runtime: nodejs
+env: flex
+
+handlers:
+- url: /
+  static_files: frontend/www/index.html
+  upload: frontend/www/index.html
+- url: /images
+  static_dir: frontend/www/images/
+- url: /(.*)
+  static_files: frontend/www/\1
+  upload: frontend/www/(.*)

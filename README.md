@@ -1,2 +1,2 @@
-# blogapplication
-Blog web app made to learn web development basics and pair programming
+# blogapp
+A blog app class assignment made to learn pair programming and web development basics
